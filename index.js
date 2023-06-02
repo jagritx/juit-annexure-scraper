@@ -9,6 +9,7 @@ import {
   getMarksByRoll, // 2 : Roll + Sem Code
 } from "./methods.js";
 
-getMarksByRoll("201201", "2023EVESEM");
+//Call your method here
+getMarksByRoll("201218", "2023EVESEM");
 
 //2023EVESEM

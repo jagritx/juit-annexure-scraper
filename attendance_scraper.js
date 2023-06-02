@@ -3,14 +3,17 @@ import { wrapper } from "axios-cookiejar-support";
 import { CookieJar } from "tough-cookie";
 
 async function attendanceScraper(roll, pass) {
+  //Change these values if you want to retry because sometimes webkiosk server doesnt not work
   const maxAttempts = 1;
   const delay = 0;
   let attempts = 0;
 
   while (attempts < maxAttempts) {
     try {
+      // Solving the cookie problem (just these two lines) took wayyy longer than expected :-|
       const jar = new CookieJar();
       const client = wrapper(axios.create({ jar }));
+
       axios.defaults.withCredentials = true;
       console.log(roll, pass);
       var body = {

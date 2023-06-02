@@ -4,13 +4,14 @@ function marksParser(html) {
   const $ = load(html);
   const rows = $("table#table-1 tbody tr");
 
+  //Extract name using Reg Ex
   const nameString = $("td:contains('Name:')").text().trim();
   const nameRegex = /Name:\s(.+)/;
   const nameMatch = nameString.match(nameRegex);
   const name = nameMatch ? nameMatch[1].trim() : "";
 
   const marks = [];
-
+  //Extract Marks along with code (For this sem, might need to modify later)
   rows.each((index, row) => {
     const subject = $(row).find("td:nth-child(2)").text().trim();
     const p1 = parseFloat($(row).find("td:nth-child(3)").text().trim()) || 0;
