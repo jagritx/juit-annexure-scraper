@@ -12,4 +12,7 @@ import {
 //Call your method here
 getMarksByRoll("201218", "2023EVESEM");
 
-//2023EVESEM
+// Note : Won't work unless you have the csv file
+// Contact me if you want it ;-)
+
+//Sem code : 2023EVESEM
