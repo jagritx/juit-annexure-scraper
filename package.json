@@ -1,0 +1,21 @@
+{
+  "name": "annexure-_scraper",
+  "version": "1.0.0",
+  "description": "Thanks to JUIT Administration for sharing annexure",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "start":"node index.js",
+    "test": "node -e \"console.log('Well this is awkward.')\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "axios-cookiejar-support": "^4.0.6",
+    "cheerio": "^1.0.0-rc.12",
+    "csv-parse": "^5.4.0",
+    "tough-cookie": "^4.1.2"
+  }
+  
+}
