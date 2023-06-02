@@ -105,6 +105,9 @@ const getMarksAll = async (semester) => {
         try {
           const scrapedData = await marksScraper(roll, pass, semester);
           const parsedData = marksParser(scrapedData);
+          console.log(
+            "-----------------------------------------------------------------------------------"
+          );
           console.log(parsedData.name);
           parsedData.marks.forEach((item) => {
             console.log(
@@ -114,6 +117,9 @@ const getMarksAll = async (semester) => {
             const filteredMarks = item.marks.filter((mark) => mark !== -1);
             console.log(`Marks: ${filteredMarks.join(", ")}`);
           });
+          console.log(
+            "-----------------------------------------------------------------------------------"
+          );
         } catch (error) {
           console.error("An error occurred:", error);
         }
@@ -184,15 +190,21 @@ const getMarksByRoll = async (roll, semester) => {
           try {
             const scrapedData = await marksScraper(roll, pass, semester);
             const parsedData = marksParser(scrapedData);
+            console.log(
+              "-----------------------------------------------------------------------------------"
+            );
             console.log(parsedData.name);
             parsedData.marks.forEach((item) => {
               console.log(
-                "\n---------------------------------------------------------\n"
+                "---------------------------------------------------------"
               );
               console.log(`Subject: ${item.subject}`);
               const filteredMarks = item.marks.filter((mark) => mark !== -1);
               console.log(`Marks: ${filteredMarks.join(", ")}`);
             });
+            console.log(
+              "-----------------------------------------------------------------------------------"
+            );
           } catch (error) {
             console.error("An error occurred:", error);
           }
