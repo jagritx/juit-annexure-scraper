@@ -1,5 +1,5 @@
 {
-  "name": "annexure-_scraper",
+  "name": "annexure_scraper",
   "version": "1.0.0",
   "description": "Thanks to JUIT Administration for sharing annexure",
   "main": "index.js",
@@ -17,5 +17,4 @@
     "csv-parse": "^5.4.0",
     "tough-cookie": "^4.1.2"
   }
-  
 }

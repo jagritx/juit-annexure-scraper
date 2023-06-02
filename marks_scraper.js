@@ -41,7 +41,7 @@ async function marksScraper(roll, pass, sem) {
       );
 
       const response = await client.get(
-        "https://webkiosk.juit.ac.in:9443/StudentFiles/Exam/StudentEventMarksView.jsp?x=&exam=2023EVESEM",
+        `https://webkiosk.juit.ac.in:9443/StudentFiles/Exam/StudentEventMarksView.jsp?x=&exam=${sem}`,
         { params: { exam: sem } }
       );
 
@@ -62,7 +62,7 @@ async function marksScraper(roll, pass, sem) {
   }
 
   throw new Error(
-    `Maximum number of attempts (${maxAttempts}) reached. Could not establish connection.`
+    `Maximum number of attempts (${maxAttempts}) reached. Could not establish connection or the Password has been changed.`
   );
 }
 

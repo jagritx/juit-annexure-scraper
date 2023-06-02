@@ -14,26 +14,25 @@ function marksParser(html) {
   //Extract Marks along with code (For this sem, might need to modify later)
   rows.each((index, row) => {
     const subject = $(row).find("td:nth-child(2)").text().trim();
-    const p1 = parseFloat($(row).find("td:nth-child(3)").text().trim()) || 0;
-    const p2 = parseFloat($(row).find("td:nth-child(4)").text().trim()) || 0;
-    const p3 = parseFloat($(row).find("td:nth-child(5)").text().trim()) || 0;
+    const p1 = parseFloat($(row).find("td:nth-child(3)").text().trim()) || -1;
+    const p2 = parseFloat($(row).find("td:nth-child(4)").text().trim()) || -1;
+    const p3 = parseFloat($(row).find("td:nth-child(5)").text().trim()) || -1;
     const project1 =
-      parseFloat($(row).find("td:nth-child(6)").text().trim()) || 0;
+      parseFloat($(row).find("td:nth-child(6)").text().trim()) || -1;
     const project2 =
-      parseFloat($(row).find("td:nth-child(7)").text().trim()) || 0;
+      parseFloat($(row).find("td:nth-child(7)").text().trim()) || -1;
     const project3 =
-      parseFloat($(row).find("td:nth-child(8)").text().trim()) || 0;
+      parseFloat($(row).find("td:nth-child(8)").text().trim()) || -1;
     const project4 =
-      parseFloat($(row).find("td:nth-child(9)").text().trim()) || 0;
+      parseFloat($(row).find("td:nth-child(9)").text().trim()) || -1;
     const test1 =
-      parseFloat($(row).find("td:nth-child(10)").text().trim()) || 0;
+      parseFloat($(row).find("td:nth-child(10)").text().trim()) || -1;
     const test2 =
-      parseFloat($(row).find("td:nth-child(11)").text().trim()) || 0;
+      parseFloat($(row).find("td:nth-child(11)").text().trim()) || -1;
     const test3 =
-      parseFloat($(row).find("td:nth-child(12)").text().trim()) || 0;
+      parseFloat($(row).find("td:nth-child(12)").text().trim()) || -1;
 
-    marks.push({
-      subject,
+    const subjectMarks = {
       p1,
       p2,
       p3,
@@ -44,6 +43,11 @@ function marksParser(html) {
       test1,
       test2,
       test3,
+    };
+
+    marks.push({
+      subject,
+      marks: Object.values(subjectMarks),
     });
   });
 

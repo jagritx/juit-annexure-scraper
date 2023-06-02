@@ -61,7 +61,7 @@ async function attendanceScraper(roll, pass) {
   }
 
   throw new Error(
-    `Maximum number of attempts (${maxAttempts}) reached. Could not establish connection.`
+    `Maximum number of attempts (${maxAttempts}) reached. Could not establish connection or the Password has been changed.`
   );
 }
 

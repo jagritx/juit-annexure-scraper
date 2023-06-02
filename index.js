@@ -10,7 +10,7 @@ import {
 } from "./methods.js";
 
 //Call your method here
-getMarksByRoll("201218", "2023EVESEM");
+getMarksRange("201212", "201300", "2023EVESEM");
 
 // Note : Won't work unless you have the csv file
 // Contact me if you want it ;-)
